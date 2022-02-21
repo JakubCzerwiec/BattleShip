@@ -1,0 +1,38 @@
+{
+  "name": "battleship",
+  "version": "1.0.0",
+  "description": "Odin project - extended exercise for unit testing",
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch *.js",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JakubCzerwiec/BattleShip.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JakubCzerwiec/BattleShip/issues"
+  },
+  "homepage": "https://github.com/JakubCzerwiec/BattleShip#readme",
+  "devDependencies": {
+    "css-loader": "^6.6.0",
+    "file-loader": "^6.2.0",
+    "jest": "^27.5.1",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
+  }
+}
