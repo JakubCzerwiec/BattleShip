@@ -127,7 +127,19 @@ eval("/* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DE
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n\n\nfunction component() {\n    const element = document.createElement('div');\n  \n    // Lodash, now imported by this script\n    element.innerHTML = lodash__WEBPACK_IMPORTED_MODULE_0___default.a.join(['Hello', 'webpack'], ' ');\n  \n    return element;\n  }\n  \n  document.body.appendChild(component());\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _shipsFactory__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./shipsFactory */ \"./src/shipsFactory.js\");\n\n\n\n\n\n\n\nwindow['ships'] = _shipsFactory__WEBPACK_IMPORTED_MODULE_1__[\"ships\"];\n\nwindow['destroyer'] = _shipsFactory__WEBPACK_IMPORTED_MODULE_1__[\"destroyer\"];\n\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/shipsFactory.js":
+/*!*****************************!*\
+  !*** ./src/shipsFactory.js ***!
+  \*****************************/
+/*! exports provided: destroyer, shipFactory, ships */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"destroyer\", function() { return destroyer; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"shipFactory\", function() { return shipFactory; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"ships\", function() { return ships; });\n\n\nconst shipFactory = (length, name) => {\n    let model = [];\n    for (let i = 0; i < length; i++) {\n        model.push(0)\n    }\n\n    let isHit = (index) => {\n        model.splice(index, 1, 1);\n        console.log(model);\n        \n    }\n\n    let isSunk = () => {\n        let sum = model.reduce((acc, val) => {\n            acc += val;\n            return acc;\n        }, 0);\n\n        if (sum < length) {\n            return false;\n        } else if (sum === length) {\n            return true;\n        }\n    }\n\n    return {length, name, model, isHit, isSunk};\n}\n\nconst destroyer = shipFactory(5, 'enter', 0);\n\n\n\nconst ships = [];\nships.push(destroyer)\n\n\n\n\n// module.exports = shipFactory\n\n//# sourceURL=webpack:///./src/shipsFactory.js?");
 
 /***/ })
 
